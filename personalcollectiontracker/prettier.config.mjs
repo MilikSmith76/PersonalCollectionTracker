@@ -1,6 +1,7 @@
 const config = {
   bracketSameLine: false,
   bracketSpacing: true,
+  jsxSingleQuote: true,
   semi: true,
   singleQuote: true,
   tabWidth: 4,
