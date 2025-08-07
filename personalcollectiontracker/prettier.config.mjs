@@ -1,10 +1,10 @@
 const config = {
-  trailingComma: "es5",
-  tabWidth: 4,
-  semi: true,
-  singleQuote: true,
   bracketSameLine: false,
   bracketSpacing: true,
+  semi: true,
+  singleQuote: true,
+  tabWidth: 4,
+  trailingComma: 'es5',
 };
 
 export default config;
