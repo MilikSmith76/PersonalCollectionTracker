@@ -2,6 +2,7 @@ const config = {
   bracketSameLine: false,
   bracketSpacing: true,
   jsxSingleQuote: true,
+  plugins: ['prettier-plugin-tailwindcss'],
   semi: true,
   singleQuote: true,
   tabWidth: 4,

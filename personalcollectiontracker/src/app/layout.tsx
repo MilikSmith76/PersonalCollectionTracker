@@ -1,7 +1,11 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
+
 import { Geist, Geist_Mono } from 'next/font/google';
 
 import './globals.css';
+import { JSX } from 'react';
+
+import { Navbar } from '@/components';
 
 interface RootLayoutProps {
     children: React.ReactNode;
@@ -22,16 +26,17 @@ export const metadata: Metadata = {
     title: 'Create Next App',
 };
 
-function RootLayout({ children }: Readonly<RootLayoutProps>) {
+const RootLayout = ({ children }: Readonly<RootLayoutProps>): JSX.Element => {
     return (
         <html lang='en'>
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
+                <Navbar />
                 {children}
             </body>
         </html>
     );
-}
+};
 
 export default RootLayout;
