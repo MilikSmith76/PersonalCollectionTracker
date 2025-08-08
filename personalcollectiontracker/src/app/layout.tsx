@@ -3,6 +3,10 @@ import { Geist, Geist_Mono } from 'next/font/google';
 
 import './globals.css';
 
+interface RootLayoutProps {
+    children: React.ReactNode;
+}
+
 const geistSans = Geist({
     subsets: ['latin'],
     variable: '--font-geist-sans',
@@ -18,11 +22,7 @@ export const metadata: Metadata = {
     title: 'Create Next App',
 };
 
-export default function RootLayout({
-    children,
-}: Readonly<{
-    children: React.ReactNode;
-}>) {
+function RootLayout({ children }: Readonly<RootLayoutProps>) {
     return (
         <html lang='en'>
             <body
@@ -33,3 +33,5 @@ export default function RootLayout({
         </html>
     );
 }
+
+export default RootLayout;

@@ -1,10 +1,7 @@
 @import 'tailwindcss';
 
-@plugin '@headlessui/tailwindcss';
-
 @plugin '@tailwindcss/typography';
-
-@plugin 'tailwindcss-hero-patterns';
+@plugin '@headlessui/tailwindcss';
 
 :root {
     --background: #ffffff;
