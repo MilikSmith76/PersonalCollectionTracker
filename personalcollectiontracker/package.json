@@ -16,13 +16,15 @@
   "dependencies": {
     "@apollo/client": "^3.13.9",
     "@headlessui/react": "^2.2.7",
-    "@headlessui/tailwindcss": "^0.2.2",
     "@heroicons/react": "^2.2.0",
     "axios": "^1.11.0",
+    "chart.js": "^4.5.0",
     "final-form": "^5.0.0",
     "graphql": "^16.11.0",
+    "lodash": "^4.17.21",
     "next": "15.4.5",
     "react": "19.1.0",
+    "react-chartjs-2": "^5.3.0",
     "react-dom": "19.1.0",
     "react-final-form": "^7.0.0"
   },
@@ -32,6 +34,7 @@
     "@graphql-codegen/client-preset": "^4.8.3",
     "@graphql-codegen/typescript": "^4.1.6",
     "@graphql-codegen/typescript-operations": "^4.6.1",
+    "@headlessui/tailwindcss": "^0.2.2",
     "@tailwindcss/postcss": "^4",
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^20",
@@ -42,7 +45,6 @@
     "eslint-plugin-perfectionist": "^4.15.0",
     "prettier": "^3.6.2",
     "tailwindcss": "^4",
-    "tailwindcss-hero-patterns": "^0.1.2",
     "typescript": "^5"
   }
 }
