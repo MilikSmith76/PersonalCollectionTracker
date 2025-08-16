@@ -5,7 +5,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { JSX } from 'react';
 
-import { Navbar } from '@/components';
+import { Footer, Navbar } from '@/components';
 
 interface RootLayoutProps {
     children: React.ReactNode;
@@ -34,6 +34,7 @@ const RootLayout = ({ children }: Readonly<RootLayoutProps>): JSX.Element => {
             >
                 <Navbar />
                 {children}
+                <Footer />
             </body>
         </html>
     );

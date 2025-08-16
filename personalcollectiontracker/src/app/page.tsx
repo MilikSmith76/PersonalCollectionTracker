@@ -1,19 +1,41 @@
 import { JSX } from 'react';
 
+import { DoughnutGraph, Header, LinebarGraph, Spacer } from '@/components';
+
+const sections: string[] = [
+    'Brand',
+    'Series',
+    'Publishers',
+    'TCG Products',
+    'Card Rarity',
+    'Card Set',
+    'Collectable Type',
+    'Video Game Console',
+    'Shoe Model',
+];
+
 const Home = (): JSX.Element => {
     return (
-        <div className='grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 font-sans sm:p-20'>
-            <main className='row-start-2 flex flex-col items-center gap-[32px] sm:items-start'>
-                <div className='flex flex-col items-center gap-4 sm:flex-row'>
-                    Hello world
+        <>
+            <Header name='Dashboard' />
+            <main className='max @container mb-20'>
+                <Spacer y={20} />
+                <LinebarGraph />
+                <Spacer y={20} />
+                <DoughnutGraph />
+                <Spacer y={20} />
+                <div className='mr-auto ml-auto grid w-3/4 grid-cols-3 gap-4'>
+                    {sections.map((section, i) => (
+                        <div
+                            className='h-[4vw] content-center rounded-md bg-blue-500 text-center hover:bg-blue-700 xl:text-xl'
+                            key={i}
+                        >
+                            {section}
+                        </div>
+                    ))}
                 </div>
             </main>
-            <footer className='row-start-3 flex flex-wrap items-center justify-center gap-[24px]'>
-                <div className='flex items-center gap-2 hover:underline hover:underline-offset-4'>
-                    Footer Area
-                </div>
-            </footer>
-        </div>
+        </>
     );
 };
 
