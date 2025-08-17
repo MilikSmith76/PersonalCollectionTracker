@@ -2,10 +2,7 @@ import { JSX } from 'react';
 
 import { Header, Main, Spacer, Table } from '@/components';
 
-const options = [
-    'id',
-    'name',
-];
+const options = ['id', 'name'];
 
 const data = [
     {
@@ -15,7 +12,7 @@ const data = [
     {
         id: 2,
         name: 'Brand 2',
-    }
+    },
 ];
 
 const BrandPage = (): JSX.Element => {

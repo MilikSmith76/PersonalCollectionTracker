@@ -1,6 +1,12 @@
 import { JSX } from 'react';
 
-import { DoughnutGraph, Header, LinebarGraph, Main, Spacer } from '@/components';
+import {
+    DoughnutGraph,
+    Header,
+    LinebarGraph,
+    Main,
+    Spacer,
+} from '@/components';
 
 const sections: string[] = [
     'Brand',

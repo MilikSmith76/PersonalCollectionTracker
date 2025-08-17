@@ -5,9 +5,7 @@ interface MainProps {
 }
 
 const Main = ({ children }: MainProps): JSX.Element => (
-    <main className='max @container mb-20'>
-        {children}
-    </main>
+    <main className='max @container mb-20'>{children}</main>
 );
 
 export default Main;

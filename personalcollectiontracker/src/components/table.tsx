@@ -20,11 +20,17 @@ interface TableProps<DataType> {
     labels: string[];
 }
 
-const TableHeadRow = ({ dataTypeName, labels }: TableHeadRowProps): JSX.Element => (
+const TableHeadRow = ({
+    dataTypeName,
+    labels,
+}: TableHeadRowProps): JSX.Element => (
     <thead>
-        <tr className='bg-gray-600 border-b-2 border-gray-500'>
+        <tr className='border-b-2 border-gray-500 bg-gray-600'>
             {labels.map((label) => (
-                <th className='p-[10]' key={`table-head-${label}-${dataTypeName}`}>
+                <th
+                    className='p-[10]'
+                    key={`table-head-${label}-${dataTypeName}`}
+                >
                     {getTableHeaderValue(label)}
                 </th>
             ))}
@@ -41,15 +47,25 @@ const TableDataRow = <DataType,>({
     labels,
     row,
 }: TableDataRowProps<DataType>): JSX.Element => (
-<tr className={ row != labels.length - 1 ? 'border-b-2 border-gray-500' : ''} key={`table-row-${row}-${dataTypeName}`}>
+    <tr
+        className={row != labels.length - 1 ? 'border-b-2 border-gray-500' : ''}
+        key={`table-row-${row}-${dataTypeName}`}
+    >
         {labels.map((label, col) => (
-            <td className='p-[10]' key={`table-data-${row}-${col}-${dataTypeName}`}>
+            <td
+                className='p-[10]'
+                key={`table-data-${row}-${col}-${dataTypeName}`}
+            >
                 {getValue(dataRow, label)}
             </td>
         ))}
         <td>
-            <Button className='rounded bg-sky-600 px-4 mr-2 hover:bg-sky-500'>Edit</Button>
-            <Button className='rounded bg-sky-600 px-4 hover:bg-sky-500'>Delete</Button>
+            <Button className='mr-2 rounded bg-sky-600 px-4 hover:bg-sky-500'>
+                Edit
+            </Button>
+            <Button className='rounded bg-sky-600 px-4 hover:bg-sky-500'>
+                Delete
+            </Button>
         </td>
     </tr>
 );
@@ -61,19 +77,19 @@ const Table = <DataType,>({
     const dataTypeName: string = typeof data;
 
     return (
-        <div className='w-2/3 ml-auto mr-auto bg-gray-400 rounded-xl overflow-hidden'>
-            <table className='w-full text-left table-fixed border-collapse'>
+        <div className='mr-auto ml-auto w-2/3 overflow-hidden rounded-xl bg-gray-400'>
+            <table className='w-full table-fixed border-collapse text-left'>
                 <TableHeadRow dataTypeName={dataTypeName} labels={labels} />
                 <tbody>
                     {data.map((dataRow, row) => (
-                    <TableDataRow
-                        dataRow={dataRow}
-                        dataTypeName={dataTypeName}
-                        key={`${row}-${dataTypeName}`}
-                        labels={labels}
-                        row={row}
-                    />
-                ))}
+                        <TableDataRow
+                            dataRow={dataRow}
+                            dataTypeName={dataTypeName}
+                            key={`${row}-${dataTypeName}`}
+                            labels={labels}
+                            row={row}
+                        />
+                    ))}
                 </tbody>
             </table>
         </div>
