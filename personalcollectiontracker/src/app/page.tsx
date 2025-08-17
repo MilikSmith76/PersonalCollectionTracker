@@ -1,6 +1,6 @@
 import { JSX } from 'react';
 
-import { DoughnutGraph, Header, LinebarGraph, Spacer } from '@/components';
+import { DoughnutGraph, Header, LinebarGraph, Main, Spacer } from '@/components';
 
 const sections: string[] = [
     'Brand',
@@ -18,7 +18,7 @@ const Home = (): JSX.Element => {
     return (
         <>
             <Header name='Dashboard' />
-            <main className='max @container mb-20'>
+            <Main>
                 <Spacer y={20} />
                 <LinebarGraph />
                 <Spacer y={20} />
@@ -34,7 +34,7 @@ const Home = (): JSX.Element => {
                         </div>
                     ))}
                 </div>
-            </main>
+            </Main>
         </>
     );
 };
