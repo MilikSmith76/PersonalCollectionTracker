@@ -1,7 +1,8 @@
-import { Button } from '@headlessui/react';
 import { JSX } from 'react';
 
 import { getTableHeaderValue, getValue } from '@/utils';
+
+import Button from './button';
 
 interface TableHeadRowProps {
     dataTypeName: string;
@@ -60,12 +61,8 @@ const TableDataRow = <DataType,>({
             </td>
         ))}
         <td>
-            <Button className='mr-2 rounded bg-sky-600 px-4 hover:bg-sky-500'>
-                Edit
-            </Button>
-            <Button className='rounded bg-sky-600 px-4 hover:bg-sky-500'>
-                Delete
-            </Button>
+            <Button text='Edit' />
+            <Button text='Delete' />
         </td>
     </tr>
 );

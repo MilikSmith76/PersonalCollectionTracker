@@ -1,6 +1,6 @@
 import { JSX } from 'react';
 
-import { Header, Main, Spacer, Table } from '@/components';
+import { Button, Header, Main, Spacer, Table } from '@/components';
 
 const options = ['id', 'name'];
 
@@ -21,6 +21,9 @@ const BrandPage = (): JSX.Element => {
             <Header name='Brands' />
             <Main>
                 <Spacer y={20} />
+                <div className='mr-auto ml-auto w-2/3 text-right'>
+                    <Button classNameExtension='mr-0' text='Create' />
+                </div>
                 <Table data={data} labels={options} />
             </Main>
         </>
