@@ -20,15 +20,16 @@ const AppButton = ({
 }: AppButtonProps): JSX.Element => {
     const altClassName =
         color || classNameExtension
-            ? `m-2 rounded bg-${color ?? DEFAULT_BUTTON_COLOR}-600 px-4 hover:bg-${color ?? DEFAULT_BUTTON_COLOR}-500 ${classNameExtension}`
+            ? `m-2 rounded bg-${color ?? DEFAULT_BUTTON_COLOR}-600 px-4 py-2 hover:bg-${color ?? DEFAULT_BUTTON_COLOR}-500 ${classNameExtension}`
             : '';
 
     return (
         <Button
             className={
                 className ??
-                altClassName ??
-                'm-2 rounded bg-sky-600 px-4 py-2 hover:bg-sky-500'
+                (altClassName
+                    ? altClassName
+                    : 'm-2 rounded bg-sky-600 px-4 py-2 hover:bg-sky-500')
             }
             {...otherProps}
         >

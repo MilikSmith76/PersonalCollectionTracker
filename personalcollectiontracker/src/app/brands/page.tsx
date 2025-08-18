@@ -1,6 +1,7 @@
 import { JSX } from 'react';
 
 import { Button, Header, Main, Spacer, Table } from '@/components';
+import Pagination from '@/components/pagination';
 
 const options = ['id', 'name'];
 
@@ -25,6 +26,9 @@ const BrandPage = (): JSX.Element => {
                     <Button classNameExtension='mr-0' text='Create' />
                 </div>
                 <Table data={data} labels={options} />
+                <div className='mt-2 mr-auto ml-auto w-2/3 text-center'>
+                    <Pagination />
+                </div>
             </Main>
         </>
     );
