@@ -35,7 +35,8 @@ const AppButton = ({
             }
             {...buttonProps}
         >
-            {icon ?? ''}{text}
+            {icon ?? ''}
+            {text}
         </Button>
     );
 };
