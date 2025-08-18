@@ -8,15 +8,17 @@ const DEFAULT_BUTTON_COLOR: string = 'sky';
 interface AppButtonProps extends ButtonProps {
     classNameExtension?: string;
     color?: string;
-    text: string;
+    icon?: JSX.Element;
+    text?: string;
 }
 
 const AppButton = ({
     className,
     classNameExtension,
     color,
+    icon,
     text,
-    ...otherProps
+    ...buttonProps
 }: AppButtonProps): JSX.Element => {
     const altClassName =
         color || classNameExtension
@@ -31,9 +33,9 @@ const AppButton = ({
                     ? altClassName
                     : 'm-2 rounded bg-sky-600 px-4 py-2 hover:bg-sky-500')
             }
-            {...otherProps}
+            {...buttonProps}
         >
-            {text}
+            {icon ?? ''}{text}
         </Button>
     );
 };

@@ -1,10 +1,10 @@
-import { JSX } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
 interface MainProps {
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
-const Main = ({ children }: MainProps): JSX.Element => (
+const Main = ({ children }: MainProps): ReactElement => (
     <main className='max @container mb-20'>{children}</main>
 );
 

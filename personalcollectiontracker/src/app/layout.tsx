@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
 
 import { Geist, Geist_Mono } from 'next/font/google';
 
@@ -8,7 +9,7 @@ import { JSX } from 'react';
 import { Footer, Navbar } from '@/components';
 
 interface RootLayoutProps {
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
 const geistSans = Geist({
