@@ -10,3 +10,5 @@ export const getTableHeaderValue = (header: string): string => {
 
     return header[0].toUpperCase() + header.slice(1, header.length);
 };
+
+export * from './constants';
