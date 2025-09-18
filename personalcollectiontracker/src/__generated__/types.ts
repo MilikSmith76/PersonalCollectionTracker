@@ -1549,3 +1549,40 @@ export type _Service = {
   __typename?: '_Service';
   sdl: Scalars['String']['output'];
 };
+
+export type BrandFragmentFragment = { __typename?: 'Brand', id: string, name: string, description?: string | null, logoUrl: string, deleted: boolean };
+
+export type GetAllBrandsQueryVariables = Exact<{
+  filter?: InputMaybe<BrandFilter>;
+}>;
+
+
+export type GetAllBrandsQuery = { __typename?: 'Query', brands: Array<{ __typename?: 'Brand', id: string, name: string, description?: string | null, logoUrl: string, deleted: boolean }> };
+
+export type GetBrandQueryVariables = Exact<{
+  id: Scalars['ID']['input'];
+}>;
+
+
+export type GetBrandQuery = { __typename?: 'Query', brand?: { __typename?: 'Brand', id: string, name: string, description?: string | null, logoUrl: string, deleted: boolean } | null };
+
+export type CreateBrandMutationVariables = Exact<{
+  input: BrandInput;
+}>;
+
+
+export type CreateBrandMutation = { __typename?: 'Mutation', createBrand: { __typename?: 'Brand', id: string, name: string, description?: string | null, logoUrl: string, deleted: boolean } };
+
+export type UpdateBrandMutationVariables = Exact<{
+  input: BrandInput;
+}>;
+
+
+export type UpdateBrandMutation = { __typename?: 'Mutation', updateBrand: { __typename?: 'Brand', id: string, name: string, description?: string | null, logoUrl: string, deleted: boolean } };
+
+export type DeleteBrandMutationVariables = Exact<{
+  id: Scalars['ID']['input'];
+}>;
+
+
+export type DeleteBrandMutation = { __typename?: 'Mutation', deleteBrand: boolean };
