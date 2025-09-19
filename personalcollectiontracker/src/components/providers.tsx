@@ -14,11 +14,7 @@ interface ProvidersProps {
 const Providers = ({ children }: ProvidersProps): JSX.Element => {
     const apolloClient = ApolloClientSingleton.getClient();
 
-    return (
-        <ApolloProvider client={apolloClient}>
-            {children}
-        </ApolloProvider>
-    );
+    return <ApolloProvider client={apolloClient}>{children}</ApolloProvider>;
 };
 
 export default Providers;
