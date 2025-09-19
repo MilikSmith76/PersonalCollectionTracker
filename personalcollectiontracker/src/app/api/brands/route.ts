@@ -10,7 +10,7 @@ import type {
 } from '@/__generated__/graphql';
 
 import { CREATE_BRAND, GET_ALL_BRANDS } from '@/graphQL/brands';
-import { ApolloClintSingleton, getRequestParams } from '@/utils';
+import { ApolloClientSingleton, getRequestParams } from '@/utils';
 
 const GET = async (request: NextRequest): Promise<NextResponse> => {
     const { deleted, description, id, logoUrl, name } = getRequestParams(
@@ -25,7 +25,7 @@ const GET = async (request: NextRequest): Promise<NextResponse> => {
         name,
     };
 
-    const result = await ApolloClintSingleton.query<GetAllBrandsQuery>(
+    const result = await ApolloClientSingleton.query<GetAllBrandsQuery>(
         GET_ALL_BRANDS,
         { filter }
     );
@@ -44,7 +44,7 @@ const POST = async (request: NextRequest): Promise<NextResponse> => {
         name,
     };
 
-    const result = await ApolloClintSingleton.mutation<CreateBrandMutation>(
+    const result = await ApolloClientSingleton.mutation<CreateBrandMutation>(
         CREATE_BRAND,
         { input }
     );

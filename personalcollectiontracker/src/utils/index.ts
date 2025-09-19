@@ -23,5 +23,5 @@ export const getRequestParams = (searchParams: URLSearchParams): AnyObject => {
     return params;
 };
 
-export * from './ApolloClientSingleton';
+export { default as ApolloClientSingleton } from './ApolloClientSingleton';
 export * from './constants';

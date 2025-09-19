@@ -11,7 +11,7 @@ import type {
 import type { RouteParams } from '@/interfaces';
 
 import { DELETE_BRAND, GET_BRAND, UPDATE_BRAND } from '@/graphQL/brands';
-import { ApolloClintSingleton, BAD_REQUEST } from '@/utils';
+import { ApolloClientSingleton, BAD_REQUEST } from '@/utils';
 
 const GET = async (
     _request: NextRequest,
@@ -26,7 +26,7 @@ const GET = async (
         );
     }
 
-    const result = await ApolloClintSingleton.query<GetBrandQuery>(GET_BRAND, {
+    const result = await ApolloClientSingleton.query<GetBrandQuery>(GET_BRAND, {
         id,
     });
 
@@ -57,7 +57,7 @@ const PUT = async (
         name,
     };
 
-    const result = await ApolloClintSingleton.mutation<UpdateBrandMutation>(
+    const result = await ApolloClientSingleton.mutation<UpdateBrandMutation>(
         UPDATE_BRAND,
         { input }
     );
@@ -80,7 +80,7 @@ const DELETE = async (
         );
     }
 
-    const result = await ApolloClintSingleton.mutation<DeleteBrandMutation>(
+    const result = await ApolloClientSingleton.mutation<DeleteBrandMutation>(
         DELETE_BRAND,
         { id }
     );

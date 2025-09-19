@@ -10,7 +10,7 @@ import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
 
 import { GRAPHQL_CLIENT_NAME } from './constants';
 
-class ApolloClintSingleton {
+class ApolloClientSingleton {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     private static client: ApolloClient<any>;
 
@@ -52,4 +52,4 @@ class ApolloClintSingleton {
     }
 }
 
-export { ApolloClintSingleton };
+export default ApolloClientSingleton;
