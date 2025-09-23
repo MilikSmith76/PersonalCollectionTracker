@@ -1,7 +1,7 @@
 import type { AnyObject } from '@/interfaces';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const getValue = (object: any, key: string): any => {
+export const getValue = <Type>(object: any, key: string): Type => {
     return object[key] ?? '';
 };
 
@@ -23,5 +23,6 @@ export const getRequestParams = (searchParams: URLSearchParams): AnyObject => {
     return params;
 };
 
-export { default as ApolloClientSingleton } from './ApolloClientSingleton';
+export { default as ApolloClientSingleton } from './apolloClientSingleton';
 export * from './constants';
+export { default as EntityService } from './entityService';

@@ -2,15 +2,10 @@ import type { NextRequest } from 'next/server';
 
 import { NextResponse } from 'next/server';
 
-import type {
-    BrandFilter,
-    BrandInput,
-    CreateBrandMutation,
-    GetAllBrandsQuery,
-} from '@/__generated__/graphql';
+import type { BrandFilter, BrandInput } from '@/__generated__/graphql';
 
-import { CREATE_BRAND, GET_ALL_BRANDS } from '@/graphQL/brands';
-import { ApolloClientSingleton, getRequestParams } from '@/utils';
+import BrandService from '@/services/brand';
+import { getRequestParams } from '@/utils';
 
 const GET = async (request: NextRequest): Promise<NextResponse> => {
     const { deleted, description, id, logoUrl, name } = getRequestParams(
@@ -25,12 +20,9 @@ const GET = async (request: NextRequest): Promise<NextResponse> => {
         name,
     };
 
-    const result = await ApolloClientSingleton.query<GetAllBrandsQuery>(
-        GET_ALL_BRANDS,
-        { filter }
-    );
+    const brandService = new BrandService();
 
-    const brands = result.data.brands;
+    const brands = await brandService.getAll(filter);
 
     return NextResponse.json({ brands });
 };
@@ -44,12 +36,9 @@ const POST = async (request: NextRequest): Promise<NextResponse> => {
         name,
     };
 
-    const result = await ApolloClientSingleton.mutation<CreateBrandMutation>(
-        CREATE_BRAND,
-        { input }
-    );
+    const brandService = new BrandService();
 
-    const brand = result.data?.createBrand;
+    const brand = await brandService.create(input);
 
     return NextResponse.json({ brand });
 };

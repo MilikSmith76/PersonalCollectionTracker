@@ -2,16 +2,11 @@ import type { NextRequest } from 'next/server';
 
 import { NextResponse } from 'next/server';
 
-import type {
-    BrandInput,
-    DeleteBrandMutation,
-    GetBrandQuery,
-    UpdateBrandMutation,
-} from '@/__generated__/graphql';
+import type { BrandInput } from '@/__generated__/graphql';
 import type { RouteParams } from '@/interfaces';
 
-import { DELETE_BRAND, GET_BRAND, UPDATE_BRAND } from '@/graphQL/brands';
-import { ApolloClientSingleton, BAD_REQUEST } from '@/utils';
+import BrandService from '@/services/brand';
+import { BAD_REQUEST } from '@/utils';
 
 const GET = async (
     _request: NextRequest,
@@ -26,11 +21,9 @@ const GET = async (
         );
     }
 
-    const result = await ApolloClientSingleton.query<GetBrandQuery>(GET_BRAND, {
-        id,
-    });
+    const brandService = new BrandService();
 
-    const brand = result.data.brand;
+    const brand = await brandService.get(+id);
 
     return NextResponse.json({ brand });
 };
@@ -57,12 +50,9 @@ const PUT = async (
         name,
     };
 
-    const result = await ApolloClientSingleton.mutation<UpdateBrandMutation>(
-        UPDATE_BRAND,
-        { input }
-    );
+    const brandService = new BrandService();
 
-    const brand = result.data?.updateBrand;
+    const brand = await brandService.update(input);
 
     return NextResponse.json({ brand });
 };
@@ -80,12 +70,9 @@ const DELETE = async (
         );
     }
 
-    const result = await ApolloClientSingleton.mutation<DeleteBrandMutation>(
-        DELETE_BRAND,
-        { id }
-    );
+    const brandService = new BrandService();
 
-    const success = result.data?.deleteBrand;
+    const success = await brandService.delete(+id);
 
     return NextResponse.json({ success });
 };

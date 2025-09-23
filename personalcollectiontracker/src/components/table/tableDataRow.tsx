@@ -26,7 +26,7 @@ const TableDataRow = <DataType,>({
                 className='p-[10]'
                 key={`table-data-${row}-${col}-${dataTypeName}`}
             >
-                {getValue(dataRow, label)}
+                {getValue<string>(dataRow, label)}
             </td>
         ))}
         <td>
