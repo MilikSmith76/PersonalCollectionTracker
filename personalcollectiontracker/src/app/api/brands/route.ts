@@ -4,8 +4,10 @@ import { NextResponse } from 'next/server';
 
 import type { BrandFilter, BrandInput } from '@/__generated__/graphql';
 
-import BrandService from '@/services/brand';
+import { BrandService } from '@/services';
 import { getRequestParams } from '@/utils';
+
+const brandService = new BrandService();
 
 const GET = async (request: NextRequest): Promise<NextResponse> => {
     const { deleted, description, id, logoUrl, name } = getRequestParams(
@@ -20,8 +22,6 @@ const GET = async (request: NextRequest): Promise<NextResponse> => {
         name,
     };
 
-    const brandService = new BrandService();
-
     const brands = await brandService.getAll(filter);
 
     return NextResponse.json({ brands });
@@ -35,8 +35,6 @@ const POST = async (request: NextRequest): Promise<NextResponse> => {
         logoUrl,
         name,
     };
-
-    const brandService = new BrandService();
 
     const brand = await brandService.create(input);
 

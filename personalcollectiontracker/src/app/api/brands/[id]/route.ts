@@ -5,8 +5,10 @@ import { NextResponse } from 'next/server';
 import type { BrandInput } from '@/__generated__/graphql';
 import type { RouteParams } from '@/interfaces';
 
-import BrandService from '@/services/brand';
+import { BrandService } from '@/services';
 import { BAD_REQUEST } from '@/utils';
+
+const brandService = new BrandService();
 
 const GET = async (
     _request: NextRequest,
@@ -20,8 +22,6 @@ const GET = async (
             { status: BAD_REQUEST }
         );
     }
-
-    const brandService = new BrandService();
 
     const brand = await brandService.get(+id);
 
@@ -50,8 +50,6 @@ const PUT = async (
         name,
     };
 
-    const brandService = new BrandService();
-
     const brand = await brandService.update(input);
 
     return NextResponse.json({ brand });
@@ -69,8 +67,6 @@ const DELETE = async (
             { status: BAD_REQUEST }
         );
     }
-
-    const brandService = new BrandService();
 
     const success = await brandService.delete(+id);
 
