@@ -15,7 +15,7 @@ const TextFormField = ({
                 <Label className='block'>{label}</Label>
                 <Input
                     {...input}
-                    className='mt-1 block w-full rounded border-2 border-white p-2'
+                    className='mt-1 block w-full rounded border-2 p-2 dark:border-white'
                     invalid={meta.error}
                     type={inputType}
                 />

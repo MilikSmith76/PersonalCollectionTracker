@@ -57,10 +57,10 @@ const fields: FormFieldProps[] = [
 const NewBrandPage = (): JSX.Element => {
     return (
         <>
-            <Header name='Create new Brand' />
+            <Header name='Create New Brand' />
             <Main>
                 <Spacer y={20} />
-                <div className='mr-auto ml-auto w-2/3 rounded border-2 border-white p-4'>
+                <div className='mr-auto ml-auto w-2/3 rounded border-2 p-4 dark:border-white'>
                     <Form
                         fields={fields}
                         formHeader='Create New Brand'

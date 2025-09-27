@@ -32,7 +32,7 @@ const RadioFormField = ({
                     {options?.map((option) => (
                         <Button
                             className={[
-                                'mt-1 mb-3 flex w-full rounded border-2 border-white p-2 hover:border-slate-600 hover:text-slate-600',
+                                'mt-1 mb-3 flex w-full rounded border-2 p-2 hover:border-slate-600 hover:text-slate-600 dark:border-white',
                                 (input.value == option.value &&
                                     'bg-slate-400') ??
                                     '',

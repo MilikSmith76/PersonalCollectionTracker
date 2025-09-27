@@ -14,7 +14,7 @@ const SelectFormField = ({
             <Field>
                 <Label className='block'>{label}</Label>
                 <Select
-                    className='hover:bg-black-900 mt-1 block w-full rounded border-2 border-white px-2 py-3 focus:bg-slate-400'
+                    className='hover:bg-black-900 mt-1 block w-full rounded border-2 px-2 py-3 focus:bg-slate-400 dark:border-white'
                     onBlur={input.onBlur}
                     onChange={input.onChange}
                     onFocus={input.onFocus}

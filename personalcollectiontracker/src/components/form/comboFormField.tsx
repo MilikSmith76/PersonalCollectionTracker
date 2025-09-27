@@ -64,7 +64,7 @@ const ComboFormField = ({ label, name }: FormFieldProps): JSX.Element => {
                     <Combobox onChange={onChange(input)} onClose={onClose}>
                         <ComboboxButton className='w-full'>
                             <ComboboxInput
-                                className='mt-1 block w-full rounded border-2 border-white p-2'
+                                className='mt-1 block w-full rounded border-2 p-2 dark:border-white'
                                 displayValue={useDisplayName}
                                 onChange={onQuery}
                             />
