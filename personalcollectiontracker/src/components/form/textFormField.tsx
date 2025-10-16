@@ -19,7 +19,7 @@ const TextFormField = ({
                     invalid={meta.error}
                     type={inputType}
                 />
-                {meta.error && (
+                {meta.error && meta.touched && (
                     <Description className='text-red-600'>
                         {meta.error}
                     </Description>

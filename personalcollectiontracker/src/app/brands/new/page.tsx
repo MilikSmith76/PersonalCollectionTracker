@@ -1,60 +1,44 @@
 'use client';
-import { JSX } from 'react';
+import axios from 'axios';
+import { useRouter } from 'next/navigation';
+import { JSX, useCallback } from 'react';
 
-import type { FormFieldProps } from '@/interfaces';
+import type { AnyObject, FormFieldProps } from '@/interfaces';
 
 import { Form, Header, Main, Spacer } from '@/components';
 import { FormFieldTypes } from '@/utils';
+import { brandValidator } from '@/validator';
 
-const fields: FormFieldProps[] = [
+const FIELDS: FormFieldProps[] = [
     {
         fieldType: FormFieldTypes.TEXT,
         label: 'Name',
         name: 'name',
     },
     {
-        fieldType: FormFieldTypes.COMBO,
-        label: 'Combo',
-        name: 'combo',
+        fieldType: FormFieldTypes.TEXT,
+        label: 'Description',
+        name: 'description',
     },
     {
-        fieldType: FormFieldTypes.RADIO,
-        label: 'Radio',
-        name: 'radio',
-        options: [
-            {
-                name: 'Option 1',
-                value: '1',
-            },
-            {
-                name: 'Option 2',
-                value: '2',
-            },
-        ],
-    },
-    {
-        fieldType: FormFieldTypes.SELECT,
-        label: 'Select',
-        name: 'select',
-        options: [
-            {
-                name: 'Option 1',
-                value: '1',
-            },
-            {
-                name: 'Option 2',
-                value: '2',
-            },
-        ],
-    },
-    {
-        fieldType: FormFieldTypes.SWITCH,
-        label: 'Switch',
-        name: 'switch',
+        fieldType: FormFieldTypes.TEXT,
+        label: 'Logo Url',
+        name: 'logoUrl',
     },
 ];
 
 const NewBrandPage = (): JSX.Element => {
+    const router = useRouter();
+
+    const onSubmit = useCallback(
+        async (value: AnyObject) => {
+            await axios.post('/api/brands', value);
+
+            router.push('/brands');
+        },
+        [router]
+    );
+
     return (
         <>
             <Header name='Create New Brand' />
@@ -62,9 +46,10 @@ const NewBrandPage = (): JSX.Element => {
                 <Spacer y={20} />
                 <div className='mr-auto ml-auto w-2/3 rounded border-2 p-4 dark:border-white'>
                     <Form
-                        fields={fields}
+                        fields={FIELDS}
                         formHeader='Create New Brand'
-                        onSubmit={(value) => console.log(value)}
+                        onSubmit={onSubmit}
+                        validate={brandValidator}
                     />
                 </div>
             </Main>
