@@ -3,29 +3,11 @@ import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { JSX, useCallback } from 'react';
 
-import type { AnyObject, FormFieldProps } from '@/interfaces';
+import type { AnyObject } from '@/interfaces';
 
 import { Form, Header, Main, Spacer } from '@/components';
-import { FormFieldTypes } from '@/utils';
+import { BRAND_FIELDS } from '@/utils';
 import { brandValidator } from '@/validator';
-
-const FIELDS: FormFieldProps[] = [
-    {
-        fieldType: FormFieldTypes.TEXT,
-        label: 'Name',
-        name: 'name',
-    },
-    {
-        fieldType: FormFieldTypes.TEXT,
-        label: 'Description',
-        name: 'description',
-    },
-    {
-        fieldType: FormFieldTypes.TEXT,
-        label: 'Logo Url',
-        name: 'logoUrl',
-    },
-];
 
 const NewBrandPage = (): JSX.Element => {
     const router = useRouter();
@@ -36,7 +18,7 @@ const NewBrandPage = (): JSX.Element => {
 
             router.push('/brands');
         },
-        [router]
+        [router],
     );
 
     return (
@@ -46,7 +28,7 @@ const NewBrandPage = (): JSX.Element => {
                 <Spacer y={20} />
                 <div className='mr-auto ml-auto w-2/3 rounded border-2 p-4 dark:border-white'>
                     <Form
-                        fields={FIELDS}
+                        fields={BRAND_FIELDS}
                         formHeader='Create New Brand'
                         onSubmit={onSubmit}
                         validate={brandValidator}
