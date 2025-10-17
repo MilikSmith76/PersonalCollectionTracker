@@ -18,7 +18,7 @@ const NewBrandPage = (): JSX.Element => {
 
             router.push('/brands');
         },
-        [router],
+        [router]
     );
 
     return (

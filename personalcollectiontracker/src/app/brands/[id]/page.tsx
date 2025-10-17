@@ -12,7 +12,7 @@ import { brandValidator } from '@/validator';
 interface UpdateBrandPageProps {
     params: Promise<{
         id: string;
-    }>,
+    }>;
 }
 
 const UpdateBrandPage = (props: UpdateBrandPageProps): JSX.Element => {
@@ -26,19 +26,18 @@ const UpdateBrandPage = (props: UpdateBrandPageProps): JSX.Element => {
 
             setBrand(result.data.brand);
         },
-        [id, setBrand],
+        [id, setBrand]
     );
 
-    const getBrand = useCallback(
-        async() => {
-            const result = await axios.get(`/api/brands/${id}`);
+    const getBrand = useCallback(async () => {
+        const result = await axios.get(`/api/brands/${id}`);
 
-            setBrand(result.data.brand);
-        },
-        [id, setBrand],
-    );
+        setBrand(result.data.brand);
+    }, [id, setBrand]);
 
-    useEffect(() => { getBrand() }, [getBrand]);
+    useEffect(() => {
+        getBrand();
+    }, [getBrand]);
 
     return (
         <>
@@ -55,9 +54,7 @@ const UpdateBrandPage = (props: UpdateBrandPageProps): JSX.Element => {
                             validate={brandValidator}
                         />
                     )}
-                    {!brand && (
-                        <p>Brand could not be found</p>
-                    )}
+                    {!brand && <p>Brand could not be found</p>}
                 </div>
             </Main>
         </>

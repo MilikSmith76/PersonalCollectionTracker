@@ -13,11 +13,7 @@ const BRAND_FRAGMENT = gql(`
 const GET_ALL_BRANDS = gql(`
   query GetAllBrands($filter: BrandFilter) {
     brands(filter: $filter) {
-      id
-      name
-      description
-      logoUrl
-      deleted
+      ...BrandFragment
     }
   }
 `);
@@ -25,11 +21,7 @@ const GET_ALL_BRANDS = gql(`
 const GET_BRAND = gql(`
   query GetBrand($id: ID!) {
     brand(id: $id) {
-      id
-      name
-      description
-      logoUrl
-      deleted
+      ...BrandFragment
     }
   }
 `);
@@ -37,11 +29,7 @@ const GET_BRAND = gql(`
 const CREATE_BRAND = gql(`
   mutation CreateBrand($input: BrandInput!) {
     createBrand(input: $input) {
-      id
-      name
-      description
-      logoUrl
-      deleted
+      ...BrandFragment
     }
   }
 `);
@@ -49,11 +37,7 @@ const CREATE_BRAND = gql(`
 const UPDATE_BRAND = gql(`
   mutation UpdateBrand($input: BrandInput!) {
     updateBrand(input: $input) {
-      id
-      name
-      description
-      logoUrl
-      deleted
+      ...BrandFragment
     }
   }
 `);

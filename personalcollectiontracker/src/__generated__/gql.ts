@@ -15,18 +15,18 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  */
 type Documents = {
     "\n  fragment BrandFragment on Brand {\n    id\n    name\n    description\n    logoUrl\n    deleted\n  }\n": typeof types.BrandFragmentFragmentDoc,
-    "\n  query GetAllBrands($filter: BrandFilter) {\n    brands(filter: $filter) {\n      id\n      name\n      description\n      logoUrl\n      deleted\n    }\n  }\n": typeof types.GetAllBrandsDocument,
-    "\n  query GetBrand($id: ID!) {\n    brand(id: $id) {\n      id\n      name\n      description\n      logoUrl\n      deleted\n    }\n  }\n": typeof types.GetBrandDocument,
-    "\n  mutation CreateBrand($input: BrandInput!) {\n    createBrand(input: $input) {\n      id\n      name\n      description\n      logoUrl\n      deleted\n    }\n  }\n": typeof types.CreateBrandDocument,
-    "\n  mutation UpdateBrand($input: BrandInput!) {\n    updateBrand(input: $input) {\n      id\n      name\n      description\n      logoUrl\n      deleted\n    }\n  }\n": typeof types.UpdateBrandDocument,
+    "\n  query GetAllBrands($filter: BrandFilter) {\n    brands(filter: $filter) {\n      ...BrandFragment\n    }\n  }\n": typeof types.GetAllBrandsDocument,
+    "\n  query GetBrand($id: ID!) {\n    brand(id: $id) {\n      ...BrandFragment\n    }\n  }\n": typeof types.GetBrandDocument,
+    "\n  mutation CreateBrand($input: BrandInput!) {\n    createBrand(input: $input) {\n      ...BrandFragment\n    }\n  }\n": typeof types.CreateBrandDocument,
+    "\n  mutation UpdateBrand($input: BrandInput!) {\n    updateBrand(input: $input) {\n      ...BrandFragment\n    }\n  }\n": typeof types.UpdateBrandDocument,
     "\n  mutation DeleteBrand($id: ID!) {\n    deleteBrand(id: $id)\n  }\n": typeof types.DeleteBrandDocument,
 };
 const documents: Documents = {
     "\n  fragment BrandFragment on Brand {\n    id\n    name\n    description\n    logoUrl\n    deleted\n  }\n": types.BrandFragmentFragmentDoc,
-    "\n  query GetAllBrands($filter: BrandFilter) {\n    brands(filter: $filter) {\n      id\n      name\n      description\n      logoUrl\n      deleted\n    }\n  }\n": types.GetAllBrandsDocument,
-    "\n  query GetBrand($id: ID!) {\n    brand(id: $id) {\n      id\n      name\n      description\n      logoUrl\n      deleted\n    }\n  }\n": types.GetBrandDocument,
-    "\n  mutation CreateBrand($input: BrandInput!) {\n    createBrand(input: $input) {\n      id\n      name\n      description\n      logoUrl\n      deleted\n    }\n  }\n": types.CreateBrandDocument,
-    "\n  mutation UpdateBrand($input: BrandInput!) {\n    updateBrand(input: $input) {\n      id\n      name\n      description\n      logoUrl\n      deleted\n    }\n  }\n": types.UpdateBrandDocument,
+    "\n  query GetAllBrands($filter: BrandFilter) {\n    brands(filter: $filter) {\n      ...BrandFragment\n    }\n  }\n": types.GetAllBrandsDocument,
+    "\n  query GetBrand($id: ID!) {\n    brand(id: $id) {\n      ...BrandFragment\n    }\n  }\n": types.GetBrandDocument,
+    "\n  mutation CreateBrand($input: BrandInput!) {\n    createBrand(input: $input) {\n      ...BrandFragment\n    }\n  }\n": types.CreateBrandDocument,
+    "\n  mutation UpdateBrand($input: BrandInput!) {\n    updateBrand(input: $input) {\n      ...BrandFragment\n    }\n  }\n": types.UpdateBrandDocument,
     "\n  mutation DeleteBrand($id: ID!) {\n    deleteBrand(id: $id)\n  }\n": types.DeleteBrandDocument,
 };
 
@@ -51,19 +51,19 @@ export function gql(source: "\n  fragment BrandFragment on Brand {\n    id\n    
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "\n  query GetAllBrands($filter: BrandFilter) {\n    brands(filter: $filter) {\n      id\n      name\n      description\n      logoUrl\n      deleted\n    }\n  }\n"): (typeof documents)["\n  query GetAllBrands($filter: BrandFilter) {\n    brands(filter: $filter) {\n      id\n      name\n      description\n      logoUrl\n      deleted\n    }\n  }\n"];
+export function gql(source: "\n  query GetAllBrands($filter: BrandFilter) {\n    brands(filter: $filter) {\n      ...BrandFragment\n    }\n  }\n"): (typeof documents)["\n  query GetAllBrands($filter: BrandFilter) {\n    brands(filter: $filter) {\n      ...BrandFragment\n    }\n  }\n"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "\n  query GetBrand($id: ID!) {\n    brand(id: $id) {\n      id\n      name\n      description\n      logoUrl\n      deleted\n    }\n  }\n"): (typeof documents)["\n  query GetBrand($id: ID!) {\n    brand(id: $id) {\n      id\n      name\n      description\n      logoUrl\n      deleted\n    }\n  }\n"];
+export function gql(source: "\n  query GetBrand($id: ID!) {\n    brand(id: $id) {\n      ...BrandFragment\n    }\n  }\n"): (typeof documents)["\n  query GetBrand($id: ID!) {\n    brand(id: $id) {\n      ...BrandFragment\n    }\n  }\n"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "\n  mutation CreateBrand($input: BrandInput!) {\n    createBrand(input: $input) {\n      id\n      name\n      description\n      logoUrl\n      deleted\n    }\n  }\n"): (typeof documents)["\n  mutation CreateBrand($input: BrandInput!) {\n    createBrand(input: $input) {\n      id\n      name\n      description\n      logoUrl\n      deleted\n    }\n  }\n"];
+export function gql(source: "\n  mutation CreateBrand($input: BrandInput!) {\n    createBrand(input: $input) {\n      ...BrandFragment\n    }\n  }\n"): (typeof documents)["\n  mutation CreateBrand($input: BrandInput!) {\n    createBrand(input: $input) {\n      ...BrandFragment\n    }\n  }\n"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "\n  mutation UpdateBrand($input: BrandInput!) {\n    updateBrand(input: $input) {\n      id\n      name\n      description\n      logoUrl\n      deleted\n    }\n  }\n"): (typeof documents)["\n  mutation UpdateBrand($input: BrandInput!) {\n    updateBrand(input: $input) {\n      id\n      name\n      description\n      logoUrl\n      deleted\n    }\n  }\n"];
+export function gql(source: "\n  mutation UpdateBrand($input: BrandInput!) {\n    updateBrand(input: $input) {\n      ...BrandFragment\n    }\n  }\n"): (typeof documents)["\n  mutation UpdateBrand($input: BrandInput!) {\n    updateBrand(input: $input) {\n      ...BrandFragment\n    }\n  }\n"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

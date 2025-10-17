@@ -17,10 +17,7 @@ export type Scalars = {
   _FieldSet: { input: any; output: any; }
 };
 
-/**
- * 
- * Represents an art book, which is a type of collectable item.
- */
+/** Represents an art book, which is a type of collectable item. */
 export type ArtBook = {
   __typename?: 'ArtBook';
   baseCollectable: BaseCollectable;
@@ -51,10 +48,7 @@ export type ArtBookInput = {
   publisherId: Scalars['ID']['input'];
 };
 
-/**
- * 
- * Represents a base collectable item, which can be extended by specific types like art books.
- */
+/** Represents a base collectable item, which can be extended by specific types like art books. */
 export type BaseCollectable = {
   __typename?: 'BaseCollectable';
   createdAt: Scalars['String']['output'];
@@ -91,10 +85,7 @@ export type BaseCollectableInput = {
   quantity: Scalars['Int']['input'];
 };
 
-/**
- * 
- * Represents a brand, which is a company or organization that produces collectable items.
- */
+/** Represents a brand, which is a company or organization that produces collectable items. */
 export type Brand = {
   __typename?: 'Brand';
   createdAt: Scalars['String']['output'];
@@ -122,10 +113,7 @@ export type BrandInput = {
   name: Scalars['String']['input'];
 };
 
-/**
- * 
- * Represents a trading card, which is a type of collectable item.
- */
+/** Represents a trading card, which is a type of collectable item. */
 export type Card = {
   __typename?: 'Card';
   baseCollectable: BaseCollectable;
@@ -162,10 +150,7 @@ export type CardInput = {
   setId: Scalars['ID']['input'];
 };
 
-/**
- * 
- * Represents the type of a card product, such as a booster box or pack.
- */
+/** Represents the type of a card product, such as a booster box or pack. */
 export type CardProductType = {
   __typename?: 'CardProductType';
   createdAt: Scalars['String']['output'];
@@ -187,10 +172,7 @@ export type CardProductTypeInput = {
   name: Scalars['String']['input'];
 };
 
-/**
- * 
- * Represents the rarity of a card, indicating how the card is printed.
- */
+/** Represents the rarity of a card, indicating how the card is printed. */
 export type CardRarity = {
   __typename?: 'CardRarity';
   brand: Brand;
@@ -215,10 +197,7 @@ export type CardRarityInput = {
   name: Scalars['String']['input'];
 };
 
-/**
- * 
- * Represents a set of cards, which is a collection of cards released together.
- */
+/** Represents a set of cards, which is a collection of cards released together. */
 export type CardSet = {
   __typename?: 'CardSet';
   brand: Brand;
@@ -246,10 +225,7 @@ export type CardSetInput = {
   seriesId: Scalars['ID']['input'];
 };
 
-/**
- * 
- * Represents a collectable item, which cannot be represented by more defined collectable types.
- */
+/** Represents a collectable item, which cannot be represented by more defined collectable types. */
 export type Collectable = {
   __typename?: 'Collectable';
   baseCollectable: BaseCollectable;
@@ -284,7 +260,6 @@ export type CollectableInput = {
 };
 
 /**
- * 
  * Represents a collectable type, which can be a specific category of collectable items.
  * excludes: ArtBooks, Cards, Sealed Cards, Shoes, and Video Games.
  */
@@ -309,10 +284,7 @@ export type CollectableTypeInput = {
   name: Scalars['String']['input'];
 };
 
-/**
- * 
- * Represents a video game console.
- */
+/** Represents a video game console. */
 export type Console = {
   __typename?: 'Console';
   brand: Brand;
@@ -586,230 +558,95 @@ export enum ErrorType {
 
 export type Mutation = {
   __typename?: 'Mutation';
-  /**
-   * 
-   * Creates a new art book.
-   */
+  /** Creates a new art book. */
   createArtBook: ArtBook;
-  /**
-   * 
-   * Creates a new brand.
-   */
+  /** Creates a new brand. */
   createBrand: Brand;
-  /**
-   * 
-   * Creates a new card.
-   */
+  /** Creates a new card. */
   createCard: Card;
-  /**
-   * 
-   * Creates a new card product type.
-   */
+  /** Creates a new card product type. */
   createCardProductType: CardProductType;
-  /**
-   * 
-   * Creates a new card rarity.
-   */
+  /** Creates a new card rarity. */
   createCardRarity: CardRarity;
-  /**
-   * 
-   * Creates a new card set.
-   */
+  /** Creates a new card set. */
   createCardSet: CardSet;
-  /**
-   * 
-   * Creates a new collectable.
-   */
+  /** Creates a new collectable. */
   createCollectable: Collectable;
-  /**
-   * 
-   * Creates a new Collectable Type.
-   */
+  /** Creates a new Collectable Type. */
   createCollectableType: CollectableType;
-  /**
-   * 
-   * Creates a new video game console.
-   */
+  /** Creates a new video game console. */
   createConsole: Console;
-  /**
-   * 
-   * Creates a new publisher.
-   */
+  /** Creates a new publisher. */
   createPublisher: Publisher;
-  /**
-   * 
-   * Creates a new sealed card product.
-   */
+  /** Creates a new sealed card product. */
   createSealedCardProduct: SealedCardProduct;
-  /**
-   * 
-   * Creates a new series.
-   */
+  /** Creates a new series. */
   createSeries: Series;
-  /**
-   * 
-   * Creates a new shoe.
-   */
+  /** Creates a new shoe. */
   createShoe: Shoe;
-  /**
-   * 
-   * Creates a new shoe model.
-   */
+  /** Creates a new shoe model. */
   createShoeModel: ShoeModel;
-  /**
-   * 
-   * Creates a new video game.
-   */
+  /** Creates a new video game. */
   createVideoGame: VideoGame;
-  /**
-   * 
-   * Deletes an art book by its ID.
-   */
+  /** Deletes an art book by its ID. */
   deleteArtBook: Scalars['Boolean']['output'];
-  /**
-   * 
-   * Deletes a brand by its ID.
-   */
+  /** Deletes a brand by its ID. */
   deleteBrand: Scalars['Boolean']['output'];
-  /**
-   * 
-   * Deletes a card by its ID.
-   */
+  /** Deletes a card by its ID. */
   deleteCard: Scalars['Boolean']['output'];
-  /**
-   * 
-   * Deletes a card product type by its ID.
-   */
+  /** Deletes a card product type by its ID. */
   deleteCardProductType: Scalars['Boolean']['output'];
-  /**
-   * 
-   * Deletes a card rarity by its ID.
-   */
+  /** Deletes a card rarity by its ID. */
   deleteCardRarity: Scalars['Boolean']['output'];
-  /**
-   * 
-   * Deletes a card set by its ID.
-   */
+  /** Deletes a card set by its ID. */
   deleteCardSet: Scalars['Boolean']['output'];
-  /**
-   * 
-   * Deletes a collectable by its ID.
-   */
+  /** Deletes a collectable by its ID. */
   deleteCollectable: Scalars['Boolean']['output'];
-  /**
-   * 
-   * Deletes a Collectable Type by its ID.
-   */
+  /** Deletes a Collectable Type by its ID. */
   deleteCollectableType: Scalars['Boolean']['output'];
-  /**
-   * 
-   * Deletes a video game console by its ID.
-   */
+  /** Deletes a video game console by its ID. */
   deleteConsole: Scalars['Boolean']['output'];
-  /**
-   * 
-   * Deletes a publisher by its ID.
-   */
+  /** Deletes a publisher by its ID. */
   deletePublisher: Scalars['Boolean']['output'];
-  /**
-   * 
-   * Deletes a sealed card product by its ID.
-   */
+  /** Deletes a sealed card product by its ID. */
   deleteSealedCardProduct: Scalars['Boolean']['output'];
-  /**
-   * 
-   * Deletes a series by its ID.
-   */
+  /** Deletes a series by its ID. */
   deleteSeries: Scalars['Boolean']['output'];
-  /**
-   * 
-   * Deletes a shoe by its ID.
-   */
+  /** Deletes a shoe by its ID. */
   deleteShoe: Scalars['Boolean']['output'];
-  /**
-   * 
-   * Deletes a shoe model by its ID.
-   */
+  /** Deletes a shoe model by its ID. */
   deleteShoeModel: Scalars['Boolean']['output'];
-  /**
-   * 
-   * Deletes a video game by its ID.
-   */
+  /** Deletes a video game by its ID. */
   deleteVideoGame: Scalars['Boolean']['output'];
-  /**
-   * 
-   * Updates an existing art book.
-   */
+  /** Updates an existing art book. */
   updateArtBook: ArtBook;
-  /**
-   * 
-   * Updates an existing brand.
-   */
+  /** Updates an existing brand. */
   updateBrand: Brand;
-  /**
-   * 
-   * Updates an existing card.
-   */
+  /** Updates an existing card. */
   updateCard: Card;
-  /**
-   * 
-   * Updates an existing card product type.
-   */
+  /** Updates an existing card product type. */
   updateCardProductType: CardProductType;
-  /**
-   * 
-   * Updates an existing card rarity.
-   */
+  /** Updates an existing card rarity. */
   updateCardRarity: CardRarity;
-  /**
-   * 
-   * Updates an existing card set.
-   */
+  /** Updates an existing card set. */
   updateCardSet: CardSet;
-  /**
-   * 
-   * Updates an existing collectable.
-   */
+  /** Updates an existing collectable. */
   updateCollectable: Collectable;
-  /**
-   * 
-   * Updates an existing Collectable Type.
-   */
+  /** Updates an existing Collectable Type. */
   updateCollectableType: CollectableType;
-  /**
-   * 
-   * Updates an existing video game console.
-   */
+  /** Updates an existing video game console. */
   updateConsole: Console;
-  /**
-   * 
-   * Updates an existing publisher.
-   */
+  /** Updates an existing publisher. */
   updatePublisher: Publisher;
-  /**
-   * 
-   * Updates an existing sealed card product.
-   */
+  /** Updates an existing sealed card product. */
   updateSealedCardProduct: SealedCardProduct;
-  /**
-   * 
-   * Updates an existing series.
-   */
+  /** Updates an existing series. */
   updateSeries: Series;
-  /**
-   * 
-   * Updates an existing shoe.
-   */
+  /** Updates an existing shoe. */
   updateShoe: Shoe;
-  /**
-   * 
-   * Updates an existing shoe model.
-   */
+  /** Updates an existing shoe model. */
   updateShoeModel: ShoeModel;
-  /**
-   * 
-   * Updates an existing video game.
-   */
+  /** Updates an existing video game. */
   updateVideoGame: VideoGame;
 };
 
@@ -1038,10 +875,7 @@ export type MutationUpdateVideoGameArgs = {
   input: VideoGameInput;
 };
 
-/**
- * 
- * Represents a publisher, which is a company or organization that publishes collectable items.
- */
+/** Represents a publisher, which is a company or organization that publishes collectable items. */
 export type Publisher = {
   __typename?: 'Publisher';
   createdAt: Scalars['String']['output'];
@@ -1072,155 +906,65 @@ export type PublisherInput = {
 export type Query = {
   __typename?: 'Query';
   _service: _Service;
-  /**
-   * 
-   * Fetches a specific art book by its ID.
-   */
+  /** Fetches a specific art book by its ID. */
   artBook?: Maybe<ArtBook>;
-  /**
-   * 
-   * Fetches a list of art books filtered by an input.
-   */
+  /** Fetches a list of art books filtered by an input. */
   artBooks: Array<ArtBook>;
-  /**
-   * 
-   * Fetches a specific brand by its ID.
-   */
+  /** Fetches a specific brand by its ID. */
   brand?: Maybe<Brand>;
-  /**
-   * 
-   * Fetches a list of brands filtered by an input.
-   */
+  /** Fetches a list of brands filtered by an input. */
   brands: Array<Brand>;
-  /**
-   * 
-   * Fetches a specific card by its ID.
-   */
+  /** Fetches a specific card by its ID. */
   card?: Maybe<Card>;
-  /**
-   * 
-   * Fetches a specific card product type by its ID.
-   */
+  /** Fetches a specific card product type by its ID. */
   cardProductType?: Maybe<CardProductType>;
-  /**
-   * 
-   * Fetches a list of card product types filtered by an input.
-   */
+  /** Fetches a list of card product types filtered by an input. */
   cardProductTypes: Array<CardProductType>;
-  /**
-   * 
-   * Fetches a list of card rarities filtered by an input.
-   */
+  /** Fetches a list of card rarities filtered by an input. */
   cardRarities: Array<CardRarity>;
-  /**
-   * 
-   * Fetches a specific card rarity by its ID.
-   */
+  /** Fetches a specific card rarity by its ID. */
   cardRarity?: Maybe<CardRarity>;
-  /**
-   * 
-   * Fetches a specific card set by its ID.
-   */
+  /** Fetches a specific card set by its ID. */
   cardSet?: Maybe<CardSet>;
-  /**
-   * 
-   * Fetches a list of card sets filtered by an input.
-   */
+  /** Fetches a list of card sets filtered by an input. */
   cardSets: Array<CardSet>;
-  /**
-   * 
-   * Fetches a list of cards filtered by an input.
-   */
+  /** Fetches a list of cards filtered by an input. */
   cards: Array<Card>;
-  /**
-   * 
-   * Fetches a specific collectable by its ID.
-   */
+  /** Fetches a specific collectable by its ID. */
   collectable?: Maybe<Collectable>;
-  /**
-   * 
-   * Fetches a specific type of collectable by its ID.
-   */
+  /** Fetches a specific type of collectable by its ID. */
   collectableType?: Maybe<CollectableType>;
-  /**
-   * 
-   * Fetches a list of types of collectables filtered by an input.
-   */
+  /** Fetches a list of types of collectables filtered by an input. */
   collectableTypes: Array<CollectableType>;
-  /**
-   * 
-   * Fetches a list of collectables filtered by an input.
-   */
+  /** Fetches a list of collectables filtered by an input. */
   collectables: Array<Collectable>;
-  /**
-   * 
-   * Fetches a specific video game console by its ID.
-   */
+  /** Fetches a specific video game console by its ID. */
   console?: Maybe<Console>;
-  /**
-   * 
-   * Fetches a list of video game consoles filtered by an input.
-   */
+  /** Fetches a list of video game consoles filtered by an input. */
   consoles: Array<Console>;
-  /**
-   * 
-   * Fetches a specific publisher by its ID.
-   */
+  /** Fetches a specific publisher by its ID. */
   publisher?: Maybe<Publisher>;
-  /**
-   * 
-   * Fetches a list of publishers filtered by an input.
-   */
+  /** Fetches a list of publishers filtered by an input. */
   publishers: Array<Publisher>;
-  /**
-   * 
-   * Fetches a specific sealed card product by its ID.
-   */
+  /** Fetches a specific sealed card product by its ID. */
   sealedCardProduct?: Maybe<SealedCardProduct>;
-  /**
-   * 
-   * Fetches a list of sealed card products filtered by an input.
-   */
+  /** Fetches a list of sealed card products filtered by an input. */
   sealedCardProducts: Array<SealedCardProduct>;
-  /**
-   * 
-   * Fetches a list of series filtered by an input.
-   */
+  /** Fetches a list of series filtered by an input. */
   series: Array<Series>;
-  /**
-   * 
-   * Fetches a specific series by its ID.
-   */
+  /** Fetches a specific series by its ID. */
   seriesById?: Maybe<Series>;
-  /**
-   * 
-   * Fetches a specific shoe by its ID.
-   */
+  /** Fetches a specific shoe by its ID. */
   shoe?: Maybe<Shoe>;
-  /**
-   * 
-   * Fetches a specific shoe model by its ID.
-   */
+  /** Fetches a specific shoe model by its ID. */
   shoeModel?: Maybe<ShoeModel>;
-  /**
-   * 
-   * Fetches a list of shoe models filtered by an input.
-   */
+  /** Fetches a list of shoe models filtered by an input. */
   shoeModels: Array<ShoeModel>;
-  /**
-   * 
-   * Fetches a list of shoes filtered by an input.
-   */
+  /** Fetches a list of shoes filtered by an input. */
   shoes: Array<Shoe>;
-  /**
-   * 
-   * Fetches a specific video game by its ID.
-   */
+  /** Fetches a specific video game by its ID. */
   videoGame?: Maybe<VideoGame>;
-  /**
-   * 
-   * Fetches a list of video games filtered by an input.
-   */
+  /** Fetches a list of video games filtered by an input. */
   videoGames: Array<VideoGame>;
 };
 
@@ -1374,10 +1118,7 @@ export type QueryVideoGamesArgs = {
   filter?: InputMaybe<VideoGameFilter>;
 };
 
-/**
- * 
- * Represents a specific sealed card product, such as a booster box or pack.
- */
+/** Represents a specific sealed card product, such as a booster box or pack. */
 export type SealedCardProduct = {
   __typename?: 'SealedCardProduct';
   baseCollectable: BaseCollectable;
@@ -1414,10 +1155,7 @@ export type SealedCardProductInput = {
   typeId: Scalars['ID']['input'];
 };
 
-/**
- * 
- * Represents an intellectual property series
- */
+/** Represents an intellectual property series */
 export type Series = {
   __typename?: 'Series';
   createdAt: Scalars['String']['output'];
@@ -1439,10 +1177,7 @@ export type SeriesInput = {
   name: Scalars['String']['input'];
 };
 
-/**
- * 
- * Represents a shoe, which is a type of collectable item.
- */
+/** Represents a shoe, which is a type of collectable item. */
 export type Shoe = {
   __typename?: 'Shoe';
   baseCollectable: BaseCollectable;
@@ -1479,10 +1214,7 @@ export type ShoeInput = {
   skuId: Scalars['String']['input'];
 };
 
-/**
- * 
- * Represents a shoe model, which is the form factor of a shoe.
- */
+/** Represents a shoe model, which is the form factor of a shoe. */
 export type ShoeModel = {
   __typename?: 'ShoeModel';
   brand: Brand;
@@ -1507,10 +1239,7 @@ export type ShoeModelInput = {
   name: Scalars['String']['input'];
 };
 
-/**
- * 
- * Represents a video game, which is a type of collectable item.
- */
+/** Represents a video game, which is a type of collectable item. */
 export type VideoGame = {
   __typename?: 'VideoGame';
   baseCollectable: BaseCollectable;
@@ -1559,28 +1288,40 @@ export type GetAllBrandsQueryVariables = Exact<{
 }>;
 
 
-export type GetAllBrandsQuery = { __typename?: 'Query', brands: Array<{ __typename?: 'Brand', id: string, name: string, description?: string | null, logoUrl: string, deleted: boolean }> };
+export type GetAllBrandsQuery = { __typename?: 'Query', brands: Array<(
+    { __typename?: 'Brand' }
+    & { ' $fragmentRefs'?: { 'BrandFragmentFragment': BrandFragmentFragment } }
+  )> };
 
 export type GetBrandQueryVariables = Exact<{
   id: Scalars['ID']['input'];
 }>;
 
 
-export type GetBrandQuery = { __typename?: 'Query', brand?: { __typename?: 'Brand', id: string, name: string, description?: string | null, logoUrl: string, deleted: boolean } | null };
+export type GetBrandQuery = { __typename?: 'Query', brand?: (
+    { __typename?: 'Brand' }
+    & { ' $fragmentRefs'?: { 'BrandFragmentFragment': BrandFragmentFragment } }
+  ) | null };
 
 export type CreateBrandMutationVariables = Exact<{
   input: BrandInput;
 }>;
 
 
-export type CreateBrandMutation = { __typename?: 'Mutation', createBrand: { __typename?: 'Brand', id: string, name: string, description?: string | null, logoUrl: string, deleted: boolean } };
+export type CreateBrandMutation = { __typename?: 'Mutation', createBrand: (
+    { __typename?: 'Brand' }
+    & { ' $fragmentRefs'?: { 'BrandFragmentFragment': BrandFragmentFragment } }
+  ) };
 
 export type UpdateBrandMutationVariables = Exact<{
   input: BrandInput;
 }>;
 
 
-export type UpdateBrandMutation = { __typename?: 'Mutation', updateBrand: { __typename?: 'Brand', id: string, name: string, description?: string | null, logoUrl: string, deleted: boolean } };
+export type UpdateBrandMutation = { __typename?: 'Mutation', updateBrand: (
+    { __typename?: 'Brand' }
+    & { ' $fragmentRefs'?: { 'BrandFragmentFragment': BrandFragmentFragment } }
+  ) };
 
 export type DeleteBrandMutationVariables = Exact<{
   id: Scalars['ID']['input'];
@@ -1590,8 +1331,8 @@ export type DeleteBrandMutationVariables = Exact<{
 export type DeleteBrandMutation = { __typename?: 'Mutation', deleteBrand: boolean };
 
 export const BrandFragmentFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"BrandFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Brand"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"logoUrl"}},{"kind":"Field","name":{"kind":"Name","value":"deleted"}}]}}]} as unknown as DocumentNode<BrandFragmentFragment, unknown>;
-export const GetAllBrandsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetAllBrands"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"filter"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"BrandFilter"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"brands"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"Variable","name":{"kind":"Name","value":"filter"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"logoUrl"}},{"kind":"Field","name":{"kind":"Name","value":"deleted"}}]}}]}}]} as unknown as DocumentNode<GetAllBrandsQuery, GetAllBrandsQueryVariables>;
-export const GetBrandDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetBrand"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"id"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"ID"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"brand"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"id"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"logoUrl"}},{"kind":"Field","name":{"kind":"Name","value":"deleted"}}]}}]}}]} as unknown as DocumentNode<GetBrandQuery, GetBrandQueryVariables>;
-export const CreateBrandDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"CreateBrand"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"input"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"BrandInput"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"createBrand"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"input"},"value":{"kind":"Variable","name":{"kind":"Name","value":"input"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"logoUrl"}},{"kind":"Field","name":{"kind":"Name","value":"deleted"}}]}}]}}]} as unknown as DocumentNode<CreateBrandMutation, CreateBrandMutationVariables>;
-export const UpdateBrandDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"UpdateBrand"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"input"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"BrandInput"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"updateBrand"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"input"},"value":{"kind":"Variable","name":{"kind":"Name","value":"input"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"logoUrl"}},{"kind":"Field","name":{"kind":"Name","value":"deleted"}}]}}]}}]} as unknown as DocumentNode<UpdateBrandMutation, UpdateBrandMutationVariables>;
+export const GetAllBrandsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetAllBrands"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"filter"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"BrandFilter"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"brands"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"Variable","name":{"kind":"Name","value":"filter"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"BrandFragment"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"BrandFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Brand"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"logoUrl"}},{"kind":"Field","name":{"kind":"Name","value":"deleted"}}]}}]} as unknown as DocumentNode<GetAllBrandsQuery, GetAllBrandsQueryVariables>;
+export const GetBrandDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetBrand"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"id"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"ID"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"brand"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"id"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"BrandFragment"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"BrandFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Brand"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"logoUrl"}},{"kind":"Field","name":{"kind":"Name","value":"deleted"}}]}}]} as unknown as DocumentNode<GetBrandQuery, GetBrandQueryVariables>;
+export const CreateBrandDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"CreateBrand"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"input"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"BrandInput"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"createBrand"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"input"},"value":{"kind":"Variable","name":{"kind":"Name","value":"input"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"BrandFragment"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"BrandFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Brand"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"logoUrl"}},{"kind":"Field","name":{"kind":"Name","value":"deleted"}}]}}]} as unknown as DocumentNode<CreateBrandMutation, CreateBrandMutationVariables>;
+export const UpdateBrandDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"UpdateBrand"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"input"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"BrandInput"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"updateBrand"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"input"},"value":{"kind":"Variable","name":{"kind":"Name","value":"input"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"BrandFragment"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"BrandFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Brand"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"logoUrl"}},{"kind":"Field","name":{"kind":"Name","value":"deleted"}}]}}]} as unknown as DocumentNode<UpdateBrandMutation, UpdateBrandMutationVariables>;
 export const DeleteBrandDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"DeleteBrand"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"id"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"ID"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"deleteBrand"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"id"}}}]}]}}]} as unknown as DocumentNode<DeleteBrandMutation, DeleteBrandMutationVariables>;
