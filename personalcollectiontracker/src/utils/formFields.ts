@@ -20,4 +20,22 @@ const BRAND_FIELDS: FormFieldProps[] = [
     },
 ];
 
-export { BRAND_FIELDS };
+const PUBLISHER_FIELDS: FormFieldProps[] = [
+    {
+        fieldType: FormFieldTypes.TEXT,
+        label: 'Name',
+        name: 'name',
+    },
+    {
+        fieldType: FormFieldTypes.TEXT,
+        label: 'Description',
+        name: 'description',
+    },
+    {
+        fieldType: FormFieldTypes.TEXT,
+        label: 'Logo Url',
+        name: 'logoUrl',
+    },
+];
+
+export { BRAND_FIELDS, PUBLISHER_FIELDS };
