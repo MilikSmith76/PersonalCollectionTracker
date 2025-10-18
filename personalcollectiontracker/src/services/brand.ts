@@ -15,7 +15,7 @@ import {
     GET_ALL_BRANDS,
     GET_BRAND,
     UPDATE_BRAND,
-} from '@/graphQL/brands';
+} from '@/graphQL';
 import { EntityService } from '@/utils';
 
 class BrandService extends EntityService<

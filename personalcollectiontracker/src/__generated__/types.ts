@@ -1315,3 +1315,40 @@ export type DeleteBrandMutationVariables = Exact<{
 
 
 export type DeleteBrandMutation = { __typename?: 'Mutation', deleteBrand: boolean };
+
+export type PublisherFragmentFragment = { __typename?: 'Publisher', id: string, name: string, description?: string | null, logoUrl: string, deleted: boolean };
+
+export type GetAllPublishersQueryVariables = Exact<{
+  filter?: InputMaybe<PublisherFilter>;
+}>;
+
+
+export type GetAllPublishersQuery = { __typename?: 'Query', publishers: Array<{ __typename?: 'Publisher', id: string, name: string, description?: string | null, logoUrl: string, deleted: boolean }> };
+
+export type GetPublisherQueryVariables = Exact<{
+  id: Scalars['ID']['input'];
+}>;
+
+
+export type GetPublisherQuery = { __typename?: 'Query', publisher?: { __typename?: 'Publisher', id: string, name: string, description?: string | null, logoUrl: string, deleted: boolean } | null };
+
+export type CreatePublisherMutationVariables = Exact<{
+  input: PublisherInput;
+}>;
+
+
+export type CreatePublisherMutation = { __typename?: 'Mutation', createPublisher: { __typename?: 'Publisher', id: string, name: string, description?: string | null, logoUrl: string, deleted: boolean } };
+
+export type UpdatePublisherMutationVariables = Exact<{
+  input: PublisherInput;
+}>;
+
+
+export type UpdatePublisherMutation = { __typename?: 'Mutation', updatePublisher: { __typename?: 'Publisher', id: string, name: string, description?: string | null, logoUrl: string, deleted: boolean } };
+
+export type DeletePublisherMutationVariables = Exact<{
+  id: Scalars['ID']['input'];
+}>;
+
+
+export type DeletePublisherMutation = { __typename?: 'Mutation', deletePublisher: boolean };
